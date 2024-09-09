@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harshit Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./main_image.jfif">
+    <meta name="description" content=" Harshit Kowsik Portfolio">
+</head>
+
+<body>
+    <nav class="bottom-nav">
+        <ul>
+            <li>
+                <a href="#about">About</a>
+            </li>
+            <li>
+                <a href="#resume">Resume</a>
+            </li>
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+            <li>
+                <a href="#" onclick=showContacts()>Contacts</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="main">
+        <div class="main-head">
+            <div class="main-head-content">
+                <img class="main-image" src="./main_image.jfif">
+            </div>
+            <div class="main-head-content">
+                <h2 class="name">Harshit Kowsik</h2>
+                <div class="color">
+                    <div class="color-rod"></div>
+                    <div class="color-dot"></div>
+                </div>
+                <p class="title"> Frontend Developer</p>
+                <p class="title"> UI Designer</p>
+            </div>
+            <div class="main-head-button">
+                Show Contacts
+            </div>
+            <div class="main-head-button-over" onclick=showContacts()>
+                Show Contacts
+            </div>
+        </div>
+        <div class="hr">
+        </div>
+
+        <div class="contacts" id="contacts">
+            <div class="contacts-main">
+                <img class="main-head-content-icons" src="./email.png">
+                <div class="contacts-main-content">
+                    <p class="contacts-title">EMAIL</p>
+                    <a href="mailto:harshitkowsik@gmail.com">
+                        <p class="contacts-info">harshitkowsik@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contacts-main">
+                <img class="main-head-content-icons" src="./mobile.png">
+                <div class="contacts-main-content">
+                    <p class="contacts-title">PHONE</p>
+                    <a href="tel:+918102355103">
+                        <p class="contacts-info">+91-8102355103</p>
+                    </a>
+                </div>
+            </div>
+            <div class="contacts-main">
+                <img class="main-head-content-icons" src="./calender.png">
+                <div class="contacts-main-content">
+                    <p class="contacts-title">BIRTHDAY</p>
+                    <p class="contacts-info">August 8, 2005</p>
+                </div>
+            </div>
+            <div class="contacts-main">
+                <img class="main-head-content-icons" src="./location.png">
+                <div class="contacts-main-content">
+                    <p class="contacts-title">LOCATION</p>
+                    <p class="contacts-info">SIET, Prayagraj, Uttar Pradesh</p>
+                </div>
+            </div>
+
+            <div class="hr">
+            </div>
+            <br>
+
+        </div>
+
+    </div>
+
+    <div class="about" id="about">
+        <div class="about-title">About Me</div>
+        <div class="color-dot" style="margin-bottom: 0px;"></div>
+        <p class="about-info">I'm a Passionate engineering student with a strong interest in coding, design, and
+            creative thinking. Experienced in project management with notable contributions to projects like Google
+            Cogito & Sgi Medico. Proven track record as a volunteer and leader in various events.</p>
+
+        <p class="about-info"> Played a key role in the development and implementation of the Google Cogito project,
+            showcasing technical expertise and problem-solving skills. Demonstrated leadership skills by volunteering
+            and leading in multiple events, showcasing organizational abilities and teamwork.</p>
+
+        <p class="about-info"> Coding: Enthusiastic about exploring new technologies and coding challenges.
+            Proficient in various programming languages.</p>
+
+        <p class="about-info"> Design: Passionate about creating visually appealing and user-friendly designs.
+            Skilled in UI/UX design principles and tools.</p>
+
+        <p class="about-info">Creative Thinking: Ability to think outside the box and come up with innovative
+            solutions. Enjoy brainstorming and implementing creative solutions to complex problems.</p>
+
+        <p class="about-info"> Project Management: Experience in managing projects from inception to completion.</p>
+        <div class="about-title">What I'm Doing</div>
+        <div class="color-dot" style="margin-bottom: 0px;"></div>
+        <div class="about-tokens">
+            <img src="./icon-dev.svg" class="icon">
+            <div>
+                <div class="about-tokens-title">Web Developement</div>
+                <div class="about-tokens-info"> Passionate web developer skilled in front-end
+                    (HTML, CSS, Javascript)
+                    technologies. Experienced in collaborative projects like Google Cogito, Sgi Medico,
+                    including managing the official college cultural club website, with a commitment to continuous
+                    learning and future
+                    contributions to innovative web development.
+
+                </div>
+            </div>
+        </div>
+        <div class="about-tokens">
+            <img src="./icon-design.svg" class="icon">
+            <div>
+                <div class="about-tokens-title">UI Designing</div>
+                <div class="about-tokens-info">Passionate about UI design because it allows me to blend creativity with
+                    functionality. Crafting visually appealing interfaces which enhances user experience. Each project
+                    presents a unique challenge and inspires me to explore innovative solutions and drives me to
+                    continuously improve my skills.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var div = document.getElementById('contacts');
+
+        function showContacts() {
+            if (div.classList.contains('show')) {
+                div.classList.remove('show');
+            }
+            else {
+                div.classList.add('show');
+            }
+        }
+    </script>
+
+    <div class="resume" id="resume">
+        <div class="projects-title">Resume</div>
+        <div class="color-dot" style="margin-bottom: 0px;"></div>
+        <div class="projects-tokens" style="width: 100%;">
+            <div>
+                <div class="projects-tokens-title">Harshit Kowsik Resume </div>
+                <div class="projects-tokens-info"> I'm eager to secure a role in web development and project management
+                    where I can apply my skills in coding, design, and teamwork. I am passionate to deliver innovative
+                    solutions that meet user needs.
+                </div>
+            </div>
+            <a href="#" target="_blank">
+                <div class="projects-tokens-button">View Here <span>></span></div>
+            </a>
+        </div>
+    </div>
+    <div id="projects" class="projects">
+        <div class="projects-title">Projects</div>
+        <div class="color-dot" style="margin-bottom: 0px;"></div>
+        <div class="projects-tokens-area">
+            <div class="projects-tokens">
+                <img src="./cogito.jfif" class="projects-image">
+                <div>
+                    <div class="projects-tokens-title">Google Cogito </div>
+                    <div class="projects-tokens-info">Google Cogito is a frontend music player project that brings a
+                        seamless and
+                        immersive music listening experience inspired by Google's unique themes and
+                        designs. Developed using HTML, CSS, and JavaScript, this mini-project music player
+                        offers a sleek and modern interface with intuitive controls and customizable themes.
+                    </div>
+                </div>
+                <a href="https://github.com/harshitkowsik/for_team_cogito" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://htmlpreview.github.io/?https://github.com/harshitkowsik/for_team_cogito/blob/main/index.html"
+                    target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
+
+            </div>
+            <div class="projects-tokens">
+                <img src="./sgi.jfif" class="projects-image">
+                <div>
+                    <div class="projects-tokens-title">SGI Medico </div>
+                    <div class="projects-tokens-info">SGI Medico - A Medical Landing Page is a medical hospital
+                        representation where you can also register online or you can apply for online appointment and
+                        can get login id and password for future purposes. Patient can have personal guidance for health
+                        improvements as well as medicine suggestions.
+                    </div>
+                </div>
+                <a href="https://github.com/harshitkowsik/for_team_sgi_medico" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://htmlpreview.github.io/?https://github.com/harshitkowsik/for_team_sgi_medico/blob/main/index.html"
+                    target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
+            </div>
+            <div class="projects-tokens">
+                <img src="./rcg.jfif" class="projects-image">
+                <div>
+                    <div class="projects-tokens-title">Random Color Genrator </div>
+                    <div class="projects-tokens-info">Random Color Genrator (RCG) is a Just for Fun Project made by
+                        using HTML, CSS, JAVASCRIPT (Basics)...
+                        When Designers or Developers go through the situation of Creative Blocks then they can use this
+                        Random Color Generator for a Random Color Pick, Hex Color Code will be copied to their
+                        clipboard.
+                    </div>
+                </div>
+                <a href="https://github.com/harshitkowsik/random_color_generator" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://htmlpreview.github.io/?https://github.com/harshitkowsik/random_color_generator/blob/main/index.html"
+                    target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
+            </div>
+            <div class="projects-tokens">
+                <img src="./abs.jfif" class="projects-image">
+                <div>
+                    <div class="projects-tokens-title">About Me Slider </div>
+                    <div class="projects-tokens-info">About Me Slider (AMS) is a Just for Fun Project made by using
+                        HTML, CSS, JAVASCRIPT (Basics). When Designers or Developers go through the situation of
+                        Creative Blocks then they can use try this fun project and they can easily use as per their
+                        needs and also can apply this section in your websites.
+                    </div>
+                </div>
+                <a href="https://github.com/harshitkowsik/about_me_slider" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://htmlpreview.github.io/?https://github.com/harshitkowsik/about_me_slider/blob/main/index.html"
+                    target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="slider-section">
+        <div class="container">
+            <div class="div1">d<br>d<br>c</div>
+            <div class="div2">e<br>e<br>r</div>
+            <div class="div3">e<br>v<br>s</div>
+            <div class="div4">e<br>i<br>a</div>
+            <div class="div5">g<br>t<br>l</div>
+            <div class="div6">i<br>o<br>n</div>
+            <div class="div7">e<br>p<br>v</div>
+            <div class="div8">r<br>e<br>e</div>
+            <div class="div9">+<br>r<br>+</div>
+            <div class="bubble"></div>
+        </div>
+    </div>
+</body>
+
+</html>
