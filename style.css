@@ -687,5 +687,8 @@ img {
         font-size: 11px;
     }
 
+    .main-head-button ,.main-head-button-over{
+    right: 5vw;
+    }
 
 }
