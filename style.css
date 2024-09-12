@@ -336,7 +336,7 @@ i:hover{
     flex-wrap: wrap;
     padding: 15px;
     gap: 15px;
-    scroll-margin-top: 5vh;
+    scroll-margin-top: 10vh;
     overflow-x: hidden;
 }
 
