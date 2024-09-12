@@ -260,6 +260,18 @@ h2 {
     border: 0px solid;
 }
 
+i{
+    padding: 15px;
+    color: #d6d6d6;
+    opacity: 0.8;
+    transition: all ease 0.2s;
+}
+
+i:hover{
+    color: white;
+    opacity: 1;
+}
+
 .about {
     width: 90vw;
     background-color: #1e1e1f;
@@ -312,7 +324,7 @@ h2 {
     margin-bottom: 0px;
 }
 
-.projects {
+.projects, .exp , .ach {
     width: 90vw;
     background-color: #1e1e1f;
     border: 1px solid #2b2b2cbf;
@@ -325,9 +337,10 @@ h2 {
     padding: 15px;
     gap: 15px;
     scroll-margin-top: 5vh;
+    overflow-x: hidden;
 }
 
-.projects-tokens {
+.projects-tokens, .exp-tokens, .ach-tokens {
     background-color: #1e1e1f;
     border: 1px solid #2b2b2cbf;
     box-sizing: border-box;
@@ -339,20 +352,19 @@ h2 {
     gap: 15px;
 }
 
-.projects-tokens-area {
+.projects-tokens-area, .exp-tokens-area, .ach-tokens-area {
     display: flex;
     flex-direction: row;
     gap: 15px;
-
 }
 
-.projects-tokens-title {
+.projects-tokens-title, .exp-tokens-title, .ach-tokens-title {
     color: white;
     font-weight: 900;
     font-size: 15px;
 }
 
-.projects-tokens-info {
+.projects-tokens-info, .exp-tokens-info {
     color: #d6d6d6;
     font-weight: 200;
     font-size: 13px;
@@ -360,13 +372,13 @@ h2 {
     margin-bottom: 0px;
 }
 
-.projects-title {
+.projects-title, .exp-title, .ach-title {
     color: white;
     font-weight: 900;
     font-size: 20px;
 }
 
-.projects-image {
+.projects-image, .exp-image, .ach-image{
     width: 100%;
 
     border-radius: 12px;
@@ -419,7 +431,7 @@ img {
     padding: 15px;
     gap: 15px;
     scroll-margin-top: 5vh;
-    margin-bottom: 10vh;
+
 }
 
 .container {
@@ -428,6 +440,29 @@ img {
     align-items: center;
     padding: 2em;
     overflow: hidden;
+}
+
+.last-section{
+    width: 90vw;
+    background-color: #1e1e1f;
+    border: 1px solid #2b2b2cbf;
+    box-sizing: border-box;
+    border-radius: 12px;
+    margin-top: 2.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    gap: 15px;
+    scroll-margin-top: 5vh;
+    overflow-x: hidden;
+    margin-bottom: 10vh;
+}
+
+.last-section-info {
+    color: #d6d6d6;
+    font-weight: 200;
+    font-size: 12px;
 }
 
 
@@ -670,11 +705,11 @@ img {
 
 @media only screen and (max-width: 650px)  {
 
-    .projects-tokens-area {
+    .projects-tokens-area, .ach-tokens-area, .exp-tokens-area {
         flex-direction: column;
     }
 
-    .projects-tokens {
+    .projects-tokens, .ach-tokens, .exp-tokens {
         width: 100%;
     }
 
@@ -687,7 +722,8 @@ img {
     }
 
     .main-head-button ,.main-head-button-over{
-    right: 5vw;
-    }
+        right: 5vw;
+        }
+
 
 }
