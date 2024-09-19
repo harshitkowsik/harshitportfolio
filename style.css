@@ -384,7 +384,7 @@ i:hover{
     border-radius: 12px;
 }
 
-.projects-tokens-button {
+.projects-tokens-button, .ach-tokens-button{
     margin: 0px;
     margin-left: 0px;
     font-size: 13px;
