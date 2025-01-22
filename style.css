@@ -174,12 +174,12 @@ h2 {
 }
 
 .main-head-button-over:active {
-    filter: brightness(90%);
+    filter: brightness(110%);
     transition: all ease 0.2s;
 }
 
 .main-head-button:active {
-    filter: brightness(90%);
+    filter: brightness(110%);
     transition: all ease 0.2s;
 }
 
