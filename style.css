@@ -297,6 +297,7 @@ i:hover{
     font-size: 14px;
     margin-top: 0px;
     margin-bottom: 0px;
+    text-align: justify;
 }
 
 .about-tokens {
@@ -321,6 +322,7 @@ i:hover{
     font-size: 13px;
     margin-top: 5px;
     margin-bottom: 0px;
+    text-align: justify; 
 }
 
 .projects, .exp, .ach {
@@ -369,7 +371,8 @@ i:hover{
     font-weight: 200;
     font-size: 13px;
     margin-top: 5px;
-    margin-bottom: 0px;
+    margin-bottom: 0px; 
+    text-align: justify; 
 }
 
 .projects-title, .exp-title, .ach-title {
@@ -462,7 +465,8 @@ img {
 .last-section-info {
     color: #d6d6d6;
     font-weight: 200;
-    font-size: 12px;
+    font-size: 12px; 
+    text-align: justify; 
 }
 
 
