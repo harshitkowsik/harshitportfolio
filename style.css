@@ -705,9 +705,9 @@ img {
 
 @media only screen and (max-width: 650px)  {
 
-    .projects-tokens-area, .ach-tokens-area, .exp-tokens-area {
+/*     .projects-tokens-area, .ach-tokens-area, .exp-tokens-area {
         flex-direction: column;
-    }
+    } */
 
     .projects-tokens, .ach-tokens, .exp-tokens {
         width: 100%;
