@@ -349,6 +349,11 @@ i:hover{
     flex: 0 0 250px; 
 }
 
+#resume .projects-tokens {
+  flex-basis: auto;
+  height: auto;    
+}
+
 .projects-tokens-area, .exp-tokens-area, .ach-tokens-area {
     display: flex;
     flex-direction: row;
