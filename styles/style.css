@@ -271,6 +271,16 @@ i:hover{
     opacity: 1;
 }
 
+.social-icons {
+    display: flex;
+    align-items: center;
+}
+
+#light-mode-btn, #dark-mode-btn {
+    margin-left: auto;
+    font-size: 15px;
+}
+
 .about {
     width: 90vw;
     background-color: #1e1e1f;

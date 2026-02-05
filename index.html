@@ -108,6 +108,8 @@
                 <a href="https://www.instagram.com/harshitkowsik/" target="_blank" class="instagram" aria-label="Instagram Profile"><i
                         class="fab fa-instagram"></i></a>
                 <a href="https://x.com/harshitkowsik" target="_blank" class="twitter" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
+                <a id="light-mode-btn" href="#" onclick="setLightMode(); return false;" aria-label="Switch to Light Mode"><i class="far fa-sun"></i></a>
+                <a id="dark-mode-btn" href="#" onclick="setDarkMode(); return false;" aria-label="Switch to Dark Mode" style="display: none;"><i class="far fa-moon"></i></a>
             </div>
 
         </div>
@@ -161,6 +163,26 @@
             else {
                 div.classList.add('show');
             }
+        }
+
+        function setLightMode() {
+            document.body.style.filter = 'invert(1)';
+            document.body.style.backgroundColor = '#CFCFCF';
+            document.querySelectorAll('img').forEach(function(img) {
+                img.style.filter = 'invert(1)';
+            });
+            document.getElementById('light-mode-btn').style.display = 'none';
+            document.getElementById('dark-mode-btn').style.display = 'inline';
+        }
+
+        function setDarkMode() {
+            document.body.style.filter = 'none';
+            document.body.style.backgroundColor = '#000000';
+            document.querySelectorAll('img').forEach(function(img) {
+                img.style.filter = 'none';
+            });
+            document.getElementById('light-mode-btn').style.display = 'inline';
+            document.getElementById('dark-mode-btn').style.display = 'none';
         }
     </script>
 
@@ -580,4 +602,3 @@
 </body>
 
 </html>
-
