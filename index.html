@@ -167,7 +167,6 @@
 
         function setLightMode() {
             document.body.style.filter = 'invert(1)';
-            document.body.style.backgroundColor = '#CFCFCF';
             document.querySelectorAll('img').forEach(function(img) {
                 img.style.filter = 'invert(1)';
             });
@@ -177,7 +176,6 @@
 
         function setDarkMode() {
             document.body.style.filter = 'none';
-            document.body.style.backgroundColor = '#000000';
             document.querySelectorAll('img').forEach(function(img) {
                 img.style.filter = 'none';
             });
