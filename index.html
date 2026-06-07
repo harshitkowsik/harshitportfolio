@@ -28,6 +28,19 @@
 </head>
 
 <body>
+    <div class="mode-toggle">
+        <div class="custom-btn active" id="tech-btn" onclick="toggleMode('tech')">
+            <div class="custom-btn-inner">Tech</div>
+        </div>
+        <div class="custom-btn" id="non-tech-btn" onclick="toggleMode('non-tech')">
+            <div class="custom-btn-inner">Non-Tech</div>
+        </div>
+        <div class="custom-btn" onclick="showContacts()">
+            <div class="custom-btn-inner">View Contacts</div>
+        </div>
+    </div>
+
+
     <nav class="bottom-nav">
         <ul>
             <li>
@@ -48,7 +61,8 @@
     <div class="main">
         <div class="main-head">
             <div class="main-head-content">
-                <img class="main-image" src="./images/main-image.webp" alt="Harshit Kowsik - Frontend Developer and UI Designer">
+                <img class="main-image" src="./images/main-image.webp"
+                    alt="Harshit Kowsik - Full-Stack Developer and UI Designer">
             </div>
             <div class="main-head-content">
                 <h2 class="name">Harshit Kowsik</h2>
@@ -56,14 +70,8 @@
                     <div class="color-rod"></div>
                     <div class="color-dot"></div>
                 </div>
-                <p class="title"> Frontend Developer</p>
-                <p class="title"> UI Designer</p>
-            </div>
-            <div class="main-head-button">
-                Show Contacts
-            </div>
-            <div class="main-head-button-over" onclick=showContacts()>
-                Show Contacts
+                <p class="title"> Full-Stack Developer</p>
+                <p class="title"> Web-App Optimizer</p>
             </div>
         </div>
         <div class="hr">
@@ -103,13 +111,16 @@
             <div class="social-icons">
                 <a href="https://github.com/harshitkowsik" target="_blank" class="github" aria-label="GitHub Profile"><i
                         class="fab fa-github"></i></a>
-                <a href="https://in.linkedin.com/in/harshitkowsik" target="_blank" class="linkedin" aria-label="LinkedIn Profile"><i
-                        class="fab fa-linkedin"></i></a>
-                <a href="https://www.instagram.com/harshitkowsik/" target="_blank" class="instagram" aria-label="Instagram Profile"><i
-                        class="fab fa-instagram"></i></a>
-                <a href="https://x.com/harshitkowsik" target="_blank" class="twitter" aria-label="Twitter Profile"><i class="fab fa-twitter"></i></a>
-                <a id="light-mode-btn" href="#" onclick="setLightMode(); return false;" aria-label="Switch to Light Mode"><i class="far fa-sun"></i></a>
-                <a id="dark-mode-btn" href="#" onclick="setDarkMode(); return false;" aria-label="Switch to Dark Mode" style="display: none;"><i class="far fa-moon"></i></a>
+                <a href="https://in.linkedin.com/in/harshitkowsik" target="_blank" class="linkedin"
+                    aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/harshitkowsik/" target="_blank" class="instagram"
+                    aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/harshitkowsik" target="_blank" class="twitter" aria-label="Twitter Profile"><i
+                        class="fab fa-twitter"></i></a>
+                <a class="light-mode-btn" href="#" onclick="setLightMode(); return false;"
+                    aria-label="Switch to Light Mode"><i class="far fa-sun"></i></a>
+                <a class="dark-mode-btn" href="#" onclick="setDarkMode(); return false;"
+                    aria-label="Switch to Dark Mode" style="display: none;"><i class="far fa-moon"></i></a>
             </div>
 
         </div>
@@ -136,8 +147,8 @@
         <div class="about-tokens">
             <img src="./icons/icon-dev.svg" class="icon" alt="Web Development icon">
             <div>
-                <div class="about-tokens-title">Web Developement</div>
-                <div class="about-tokens-info"> Passionate web developer skilled in HTML, CSS, and JavaScript and more. Experienced in team projects and managing web platforms, with a focus on user-friendly, visually appealing designs and continuous learning.
+                <div class="about-tokens-title">Full-Stack Development</div>
+                <div class="about-tokens-info"> Passionate full-stack developer skilled in both frontend and backend technologies. Experienced in team projects and managing web platforms, with a focus on user-friendly, visually appealing designs and continuous learning.
 
                 </div>
             </div>
@@ -145,8 +156,8 @@
         <div class="about-tokens">
             <img src="./icons/icon-design.svg" class="icon" alt="UI Design icon">
             <div>
-                <div class="about-tokens-title">UI Designing</div>
-                <div class="about-tokens-info">Passionate about UI design, I enjoy blending creativity with functionality to craft intuitive, visually appealing interfaces that enhance user experience and inspire continuous learning.
+                <div class="about-tokens-title">Web-App Optimization</div>
+                <div class="about-tokens-info"> Dedicated to optimizing web applications for performance and user experience. Skilled in identifying bottlenecks, implementing efficient solutions, and ensuring smooth, responsive interfaces that enhance user satisfaction.
                 </div>
             </div>
         </div>
@@ -154,291 +165,316 @@
 
     <script>
 
-        var div = document.getElementById('contacts');
-
         function showContacts() {
-            if (div.classList.contains('show')) {
-                div.classList.remove('show');
-            }
-            else {
-                div.classList.add('show');
-            }
+            const contactDivs = document.querySelectorAll('.contacts');
+            contactDivs.forEach(div => {
+                if (div.classList.contains('show')) {
+                    div.classList.remove('show');
+                }
+                else {
+                    div.classList.add('show');
+                }
+            });
         }
 
         function setLightMode() {
             document.body.style.filter = 'invert(1)';
-            document.querySelectorAll('img').forEach(function(img) {
+            document.querySelectorAll('img').forEach(function (img) {
                 img.style.filter = 'invert(1)';
             });
-            document.getElementById('light-mode-btn').style.display = 'none';
-            document.getElementById('dark-mode-btn').style.display = 'inline';
+            document.querySelectorAll('.light-mode-btn').forEach(btn => btn.style.display = 'none');
+            document.querySelectorAll('.dark-mode-btn').forEach(btn => btn.style.display = 'inline');
         }
 
         function setDarkMode() {
             document.body.style.filter = 'none';
-            document.querySelectorAll('img').forEach(function(img) {
+            document.querySelectorAll('img').forEach(function (img) {
                 img.style.filter = 'none';
             });
-            document.getElementById('light-mode-btn').style.display = 'inline';
-            document.getElementById('dark-mode-btn').style.display = 'none';
+            document.querySelectorAll('.light-mode-btn').forEach(btn => btn.style.display = 'inline');
+            document.querySelectorAll('.dark-mode-btn').forEach(btn => btn.style.display = 'none');
         }
     </script>
 
-    
-<div id="projects" class="projects">
-    <div class="projects-title">Projects</div>
-    <div class="color-dot" style="margin-bottom: 0px;"></div>
-    <div class="projects-tokens-area">
 
-        
+    <div id="projects" class="projects">
+        <div class="projects-title">Projects</div>
+        <div class="color-dot" style="margin-bottom: 0px;"></div>
+        <div class="projects-tokens-area">
 
-        
 
-        <div class="projects-tokens">
-            <img src="./images/sarthi_desktop.webp" class="projects-image" alt="Sarthi Foundation website screenshot">
-            <div>
-                <div class="projects-tokens-title">Sarthi Foundation</div>
-                <div class="projects-tokens-info">Developed an NGO website with donation payment gateway, TypeScript-based frontend, Gmail-integrated forms, SEO optimization, social media integration, and cPanel hosting for reliable live deployment.
+
+
+
+            <div class="projects-tokens">
+                <img src="./images/sarthi_desktop.webp" class="projects-image"
+                    alt="Sarthi Foundation website screenshot">
+                <div>
+                    <div class="projects-tokens-title">Sarthi Foundation</div>
+                    <div class="projects-tokens-info">Developed an NGO website with donation payment gateway,
+                        TypeScript-based frontend, Gmail-integrated forms, SEO optimization, social media integration,
+                        and cPanel hosting for reliable live deployment.
+                    </div>
                 </div>
+                <a href="https://sarthifoundation.ind.in/" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://sarthifoundation.ind.in/" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/atal_desktop.webp" class="projects-image" alt="Atal Foundation website screenshot">
-            <div>
-                <div class="projects-tokens-title">Atal Foundation</div>
-                <div class="projects-tokens-info">Created a charitable trust website featuring secure donation payments, TypeScript-driven frontend logic, modern responsive UI, SEO optimization, social media integration, and stable cPanel deployment.
+            <div class="projects-tokens">
+                <img src="./images/atal_desktop.webp" class="projects-image" alt="Atal Foundation website screenshot">
+                <div>
+                    <div class="projects-tokens-title">Atal Foundation</div>
+                    <div class="projects-tokens-info">Created a charitable trust website featuring secure donation
+                        payments, TypeScript-driven frontend logic, modern responsive UI, SEO optimization, social media
+                        integration, and stable cPanel deployment.
+                    </div>
                 </div>
+                <a href="https://atalfoundation.ind.in/" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://atalfoundation.ind.in/" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/learnspire_desktop.webp" class="projects-image" alt="LearnSpire educational platform screenshot">
-            <div>
-                <div class="projects-tokens-title">LearnSpire</div>
-                <div class="projects-tokens-info">Developed an educational platform using TypeScript with modern UI, Gmail-integrated forms, SEO optimization, social media feeds, and cPanel hosting to deliver a smooth, accessible learning experience.
+            <div class="projects-tokens">
+                <img src="./images/learnspire_desktop.webp" class="projects-image"
+                    alt="LearnSpire educational platform screenshot">
+                <div>
+                    <div class="projects-tokens-title">LearnSpire</div>
+                    <div class="projects-tokens-info">Developed an educational platform using TypeScript with modern UI,
+                        Gmail-integrated forms, SEO optimization, social media feeds, and cPanel hosting to deliver a
+                        smooth, accessible learning experience.
+                    </div>
                 </div>
+                <a href="https://learnspire.org" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://learnspire.org" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/jblc_desktop.webp" class="projects-image" alt="JBLC business website screenshot">
-            <div>
-                <div class="projects-tokens-title">JBLC</div>
-                <div class="projects-tokens-info">Designed and developed a full-featured business website using TypeScript, modern UI, Gmail and Excel integrations, SEO optimization, cPanel hosting, and live deployment.
+            <div class="projects-tokens">
+                <img src="./images/jblc_desktop.webp" class="projects-image" alt="JBLC business website screenshot">
+                <div>
+                    <div class="projects-tokens-title">JBLC</div>
+                    <div class="projects-tokens-info">Designed and developed a full-featured business website using
+                        TypeScript, modern UI, Gmail and Excel integrations, SEO optimization, cPanel hosting, and live
+                        deployment.
+                    </div>
                 </div>
+                <a href="https://jblc.in" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://jblc.in" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/vidyate_desktop.webp" class="projects-image" alt="Vidyate e-commerce platform screenshot">
-            <div>
-                <div class="projects-tokens-title">Vidyate</div>
-                <div class="projects-tokens-info">Built an education-focused e-commerce platform enabling students to browse and purchase books and study materials, with secure payment methods, TypeScript-based architecture, modern UI, and SEO optimization.
+            <div class="projects-tokens">
+                <img src="./images/vidyate_desktop.webp" class="projects-image"
+                    alt="Vidyate e-commerce platform screenshot">
+                <div>
+                    <div class="projects-tokens-title">Vidyate</div>
+                    <div class="projects-tokens-info">Built an education-focused e-commerce platform enabling students
+                        to browse and purchase books and study materials, with secure payment methods, TypeScript-based
+                        architecture, modern UI, and SEO optimization.
+                    </div>
                 </div>
+                <a href="https://vidyate-student-hub.vercel.app/" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://vidyate-student-hub.vercel.app/" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/dramishra_desktop.webp" class="projects-image" alt="Dr Portfolio personal brand website screenshot">
-            <div>
-                <div class="projects-tokens-title">Dr Portfolio</div>
-                <div class="projects-tokens-info">Built a professional personal-brand website from scratch using TypeScript, modern responsive design, Gmail-integrated forms, SEO optimization, social media feeds, and cPanel-based live deployment.
+            <div class="projects-tokens">
+                <img src="./images/dramishra_desktop.webp" class="projects-image"
+                    alt="Dr Portfolio personal brand website screenshot">
+                <div>
+                    <div class="projects-tokens-title">Dr Portfolio</div>
+                    <div class="projects-tokens-info">Built a professional personal-brand website from scratch using
+                        TypeScript, modern responsive design, Gmail-integrated forms, SEO optimization, social media
+                        feeds, and cPanel-based live deployment.
+                    </div>
                 </div>
+                <a href="https://dramishra.in" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://dramishra.in" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/truegamble.webp" class="projects-image" alt="trueGamble gaming platform screenshot">
-            <div>
-                <div class="projects-tokens-title">trueGamble </div>
-                <div class="projects-tokens-info">trueGamble is a web-based gaming platform users enjoy the excitement of real gambling without any financial risk. It features game table for a fun, safe gaming experience.
+            <div class="projects-tokens">
+                <img src="./images/truegamble.webp" class="projects-image" alt="trueGamble gaming platform screenshot">
+                <div>
+                    <div class="projects-tokens-title">trueGamble </div>
+                    <div class="projects-tokens-info">trueGamble is a web-based gaming platform users enjoy the
+                        excitement of real gambling without any financial risk. It features game table for a fun, safe
+                        gaming experience.
+                    </div>
                 </div>
+                <a href="https://github.com/harshitkowsik/trueGamble" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://truegamble.vercel.app/" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://github.com/harshitkowsik/trueGamble" target="_blank">
-                <div class="projects-tokens-button">Show Project <span>></span></div>
-            </a>
-            <a href="https://truegamble.vercel.app/" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/mybucket.webp" class="projects-image" alt="myBucket bucket list application screenshot">
-            <div>
-                <div class="projects-tokens-title">myBucket </div>
-                <div class="projects-tokens-info">myBucket is a user-friendly platform to create and manage personal
-                    bucket lists with customizable themes and easy task organization. Designed for simplicity and
-                    efficiency.
+            <div class="projects-tokens">
+                <img src="./images/mybucket.webp" class="projects-image"
+                    alt="myBucket bucket list application screenshot">
+                <div>
+                    <div class="projects-tokens-title">myBucket </div>
+                    <div class="projects-tokens-info">myBucket is a user-friendly platform to create and manage personal
+                        bucket lists with customizable themes and easy task organization. Designed for simplicity and
+                        efficiency.
+                    </div>
                 </div>
+                <a href="https://github.com/harshitkowsik/myBucket" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://mybucketproject.vercel.app/" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://github.com/harshitkowsik/myBucket" target="_blank">
-                <div class="projects-tokens-button">Show Project <span>></span></div>
-            </a>
-            <a href="https://mybucketproject.vercel.app/" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/locataxi.webp" class="projects-image" alt="Locataxi Lite ride booking platform screenshot">
-            <div>
-                <div class="projects-tokens-title">Locataxi Lite </div>
-                <div class="projects-tokens-info">Locataxi Lite is a simple platform to book safe rides and access
-                    auto driver contacts in Laos. Easily book, track, and pay for trips online with quick and
-                    reliable service.
+            <div class="projects-tokens">
+                <img src="./images/locataxi.webp" class="projects-image"
+                    alt="Locataxi Lite ride booking platform screenshot">
+                <div>
+                    <div class="projects-tokens-title">Locataxi Lite </div>
+                    <div class="projects-tokens-info">Locataxi Lite is a simple platform to book safe rides and access
+                        auto driver contacts in Laos. Easily book, track, and pay for trips online with quick and
+                        reliable service.
+                    </div>
                 </div>
+                <a href="https://github.com/A-N-U-S-I-N/Loca_Taxi" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://locataxi.onrender.com/" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://github.com/A-N-U-S-I-N/Loca_Taxi" target="_blank">
-                <div class="projects-tokens-button">Show Project <span>></span></div>
-            </a>
-            <a href="https://locataxi.onrender.com/" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens" id="token-hide">
-            <img src="./images/usi.webp" class="projects-image" alt="Vriddhi USI Cultural Club website screenshot">
-            <div>
-                <div class="projects-tokens-title">Vriddhi - USI Cultural Club </div>
-                <div class="projects-tokens-info">Vriddhi is the official USI Cultural Club website, built with
-                    HTML5 and CSS. It’s responsive, featuring forms, events, and videos, and welcomes all cultural
-                    enthusiasts. Easy to use and updated.
+            <div class="projects-tokens" id="token-hide">
+                <img src="./images/usi.webp" class="projects-image" alt="Vriddhi USI Cultural Club website screenshot">
+                <div>
+                    <div class="projects-tokens-title">Vriddhi - USI Cultural Club </div>
+                    <div class="projects-tokens-info">Vriddhi is the official USI Cultural Club website, built with
+                        HTML5 and CSS. It’s responsive, featuring forms, events, and videos, and welcomes all cultural
+                        enthusiasts. Easy to use and updated.
+                    </div>
                 </div>
+                <a href="https://github.com/harshitkowsik/usiculturalclub" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://usiculturalclub.vercel.app/" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://github.com/harshitkowsik/usiculturalclub" target="_blank">
-                <div class="projects-tokens-button">Show Project <span>></span></div>
-            </a>
-            <a href="https://usiculturalclub.vercel.app/" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/cogito.webp" class="projects-image" alt="Google Cogito music player screenshot">
-            <div>
-                <div class="projects-tokens-title">Google Cogito </div>
-                <div class="projects-tokens-info">Google Cogito is a frontend music player built with HTML, CSS, and
-                    JavaScript, offering a sleek, modern interface and customizable themes for an immersive
-                    listening experience.
+            <div class="projects-tokens">
+                <img src="./images/cogito.webp" class="projects-image" alt="Google Cogito music player screenshot">
+                <div>
+                    <div class="projects-tokens-title">Google Cogito </div>
+                    <div class="projects-tokens-info">Google Cogito is a frontend music player built with HTML, CSS, and
+                        JavaScript, offering a sleek, modern interface and customizable themes for an immersive
+                        listening experience.
+                    </div>
                 </div>
+                <a href="https://github.com/harshitkowsik/for_team_cogito" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://htmlpreview.github.io/?https://github.com/harshitkowsik/for_team_cogito/blob/main/index.html"
+                    target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://github.com/harshitkowsik/for_team_cogito" target="_blank">
-                <div class="projects-tokens-button">Show Project <span>></span></div>
-            </a>
-            <a href="https://htmlpreview.github.io/?https://github.com/harshitkowsik/for_team_cogito/blob/main/index.html"
-                target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/blocksflow.webp" class="projects-image" alt="Blocks Flow project visualization app screenshot">
-            <div>
-                <div class="projects-tokens-title">Blocks Flow</div>
-                <div class="projects-tokens-info">Blocks Flow is an interactive web app for visualizing block-based
-                    flows. Users easily create, organize, and track project blocks, making clear and efficient.
-                    Clean design enhances usability.
+            <div class="projects-tokens">
+                <img src="./images/blocksflow.webp" class="projects-image"
+                    alt="Blocks Flow project visualization app screenshot">
+                <div>
+                    <div class="projects-tokens-title">Blocks Flow</div>
+                    <div class="projects-tokens-info">Blocks Flow is an interactive web app for visualizing block-based
+                        flows. Users easily create, organize, and track project blocks, making clear and efficient.
+                        Clean design enhances usability.
+                    </div>
                 </div>
+                <a href="https://github.com/harshitkowsik/blocks_flow" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://blocks-flow.vercel.app/" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://github.com/harshitkowsik/blocks_flow" target="_blank">
-                <div class="projects-tokens-button">Show Project <span>></span></div>
-            </a>
-            <a href="https://blocks-flow.vercel.app/" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/sgi.webp" class="projects-image" alt="SGI Medico hospital website screenshot">
-            <div>
-                <div class="projects-tokens-title">SGI Medico </div>
-                <div class="projects-tokens-info">SGI Medico is a simple hospital website for online registration,
-                    booking appointments, and secure login. Patients get health tips and medicine advice easily
-                    through the platform.
+            <div class="projects-tokens">
+                <img src="./images/sgi.webp" class="projects-image" alt="SGI Medico hospital website screenshot">
+                <div>
+                    <div class="projects-tokens-title">SGI Medico </div>
+                    <div class="projects-tokens-info">SGI Medico is a simple hospital website for online registration,
+                        booking appointments, and secure login. Patients get health tips and medicine advice easily
+                        through the platform.
+                    </div>
                 </div>
+                <a href="https://github.com/harshitkowsik/for_team_sgi_medico" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://htmlpreview.github.io/?https://github.com/harshitkowsik/for_team_sgi_medico/blob/main/index.html"
+                    target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://github.com/harshitkowsik/for_team_sgi_medico" target="_blank">
-                <div class="projects-tokens-button">Show Project <span>></span></div>
-            </a>
-            <a href="https://htmlpreview.github.io/?https://github.com/harshitkowsik/for_team_sgi_medico/blob/main/index.html"
-                target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/sayno.webp" class="projects-image" alt="Say No to Mouse accessibility web app screenshot">
-            <div>
-                <div class="projects-tokens-title">Say No To Mouse </div>
-                <div class="projects-tokens-info">Say No to Mouse is a web app promoting keyboard-only navigation to
-                    improve accessibility. It developers to test websites without a mouse, features are usable via
-                    keyboard.
+            <div class="projects-tokens">
+                <img src="./images/sayno.webp" class="projects-image"
+                    alt="Say No to Mouse accessibility web app screenshot">
+                <div>
+                    <div class="projects-tokens-title">Say No To Mouse </div>
+                    <div class="projects-tokens-info">Say No to Mouse is a web app promoting keyboard-only navigation to
+                        improve accessibility. It developers to test websites without a mouse, features are usable via
+                        keyboard.
+                    </div>
                 </div>
+                <a href="https://github.com/harshitkowsik/say_no_to_mouse" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://say-no-to-mouse.vercel.app/" target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://github.com/harshitkowsik/say_no_to_mouse" target="_blank">
-                <div class="projects-tokens-button">Show Project <span>></span></div>
-            </a>
-            <a href="https://say-no-to-mouse.vercel.app/" target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/rcg.webp" class="projects-image" alt="Random Color Generator tool screenshot">
-            <div>
-                <div class="projects-tokens-title">Random Color Genrator </div>
-                <div class="projects-tokens-info">Random Color Generator is a fun web project built with HTML, CSS,
-                    and JavaScript. It helps users instantly generate random colors and copy hex codes for creative
-                    inspiration and design work.
+            <div class="projects-tokens">
+                <img src="./images/rcg.webp" class="projects-image" alt="Random Color Generator tool screenshot">
+                <div>
+                    <div class="projects-tokens-title">Random Color Genrator </div>
+                    <div class="projects-tokens-info">Random Color Generator is a fun web project built with HTML, CSS,
+                        and JavaScript. It helps users instantly generate random colors and copy hex codes for creative
+                        inspiration and design work.
+                    </div>
                 </div>
+                <a href="https://github.com/harshitkowsik/random_color_generator" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://htmlpreview.github.io/?https://github.com/harshitkowsik/random_color_generator/blob/main/index.html"
+                    target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://github.com/harshitkowsik/random_color_generator" target="_blank">
-                <div class="projects-tokens-button">Show Project <span>></span></div>
-            </a>
-            <a href="https://htmlpreview.github.io/?https://github.com/harshitkowsik/random_color_generator/blob/main/index.html"
-                target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        <div class="projects-tokens">
-            <img src="./images/slider.webp" class="projects-image" alt="About Me Slider project screenshot">
-            <div>
-                <div class="projects-tokens-title">About Me Slider</div>
-                <div class="projects-tokens-info">About Me Slider is a fun web project built with HTML, CSS, and JavaScript. It helps designers and developers beat creative blocks and can be easily customized for personal needs.
+            <div class="projects-tokens">
+                <img src="./images/slider.webp" class="projects-image" alt="About Me Slider project screenshot">
+                <div>
+                    <div class="projects-tokens-title">About Me Slider</div>
+                    <div class="projects-tokens-info">About Me Slider is a fun web project built with HTML, CSS, and
+                        JavaScript. It helps designers and developers beat creative blocks and can be easily customized
+                        for personal needs.
+                    </div>
                 </div>
+                <a href="https://github.com/harshitkowsik/about_me_slider" target="_blank">
+                    <div class="projects-tokens-button">Show Project <span>></span></div>
+                </a>
+                <a href="https://html-preview.github.io/?url=https://github.com/harshitkowsik/about_me_slider/blob/main/index.html"
+                    target="_blank">
+                    <div class="projects-tokens-button">View Website <span>></span></div>
+                </a>
             </div>
-            <a href="https://github.com/harshitkowsik/about_me_slider" target="_blank">
-                <div class="projects-tokens-button">Show Project <span>></span></div>
-            </a>
-            <a href="https://html-preview.github.io/?url=https://github.com/harshitkowsik/about_me_slider/blob/main/index.html"
-                target="_blank">
-                <div class="projects-tokens-button">View Website <span>></span></div>
-            </a>
-        </div>
 
-        
+
+        </div>
     </div>
-</div>
 
 
     <div class="resume" id="resume">
@@ -447,11 +483,16 @@
         <div class="projects-tokens" style="width: 100%;">
             <div>
                 <div class="projects-tokens-title">Harshit Kowsik Resume </div>
-                <div class="about-info">I am seeking a role in web development and project management to apply my skills in coding, design, and teamwork. With strong expertise in front-end technologies. I create user-friendly and visually appealing interfaces. My experience managing collaborative projects has enhanced my project management and communication skills. I am committed to delivering innovative solutions, continuously growing my abilities, and contributing effectively to any team.
+                <div class="about-info">I am seeking a role in web development and project management to apply my skills
+                    in coding, design, and teamwork. With strong expertise in front-end technologies. I create
+                    user-friendly and visually appealing interfaces. My experience managing collaborative projects has
+                    enhanced my project management and communication skills. I am committed to delivering innovative
+                    solutions, continuously growing my abilities, and contributing effectively to any team.
                     <br>
                 </div>
             </div>
-            <a href="https://drive.google.com/file/d/16hW9ZVFJbJESloD4EBuFMgvM1FPclyCB/view?usp=drive_link" target="_blank">
+            <a href="https://drive.google.com/file/d/16hW9ZVFJbJESloD4EBuFMgvM1FPclyCB/view?usp=drive_link"
+                target="_blank">
                 <div class="projects-tokens-button">View Here <span>></span></div>
             </a>
         </div>
@@ -473,7 +514,8 @@
                 </div>
             </div>
             <div class="ach-tokens">
-                <img src="./images/ora.webp" class="ach-image" alt="The Orator's Odyssey Competition Winner certificate">
+                <img src="./images/ora.webp" class="ach-image"
+                    alt="The Orator's Odyssey Competition Winner certificate">
                 <div>
                     <div class="ach-tokens-title"> The Orator's Odyssey Competition (Winner)
                     </div>
@@ -580,6 +622,220 @@
         </div>
     </div>
 
+    <div class="main non-tech-page" style="display: none;">
+        <div class="main-head">
+            <div class="main-head-content">
+                <img class="main-image" src="./images-non-tech/harshit-kowsik.webp"
+                    alt="Harshit Kowsik - Creative Professional">
+            </div>
+            <div class="main-head-content">
+                <h2 class="name">Harshit Kowsik</h2>
+                <div class="color">
+                    <div class="color-rod"></div>
+                    <div class="color-dot"></div>
+                </div>
+                <p class="title"> Creative Designer</p>
+                <p class="title"> Brand Strategist</p>
+            </div>
+        </div>
+        <div class="hr">
+        </div>
+
+        <div class="contacts">
+            <div class="contacts-main">
+                <img class="main-head-content-icons" src="./images/email.webp" alt="Email icon">
+                <div class="contacts-main-content">
+                    <p class="contacts-title">EMAIL</p>
+                    <a href="mailto:harshitkowsik@gmail.com">
+                        <p class="contacts-info">harshitkowsik@gmail.com</p>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contacts-main">
+                <img class="main-head-content-icons" src="./images/mobile.webp" alt="Phone icon">
+                <div class="contacts-main-content">
+                    <p class="contacts-title">PHONE</p>
+                    <a href="tel:+918102355103">
+                        <p class="contacts-info">+91-8102355103</p>
+                    </a>
+                </div>
+            </div>
+            <div class="contacts-main">
+                <img class="main-head-content-icons" src="./images/location.webp" alt="Location icon">
+                <div class="contacts-main-content">
+                    <p class="contacts-title">LOCATION</p>
+                    <p class="contacts-info">Bihar, India</p>
+                </div>
+            </div>
+
+            <div class="hr">
+            </div>
+
+            <div class="social-icons">
+                <a href="https://github.com/harshitkowsik" target="_blank" class="github" aria-label="GitHub Profile"><i
+                        class="fab fa-github"></i></a>
+                <a href="https://in.linkedin.com/in/harshitkowsik" target="_blank" class="linkedin"
+                    aria-label="LinkedIn Profile"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.instagram.com/harshitkowsik/" target="_blank" class="instagram"
+                    aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
+                <a href="https://x.com/harshitkowsik" target="_blank" class="twitter" aria-label="Twitter Profile"><i
+                        class="fab fa-twitter"></i></a>
+                <a class="light-mode-btn" href="#" onclick="setLightMode(); return false;"
+                    aria-label="Switch to Light Mode"><i class="far fa-sun"></i></a>
+                <a class="dark-mode-btn" href="#" onclick="setDarkMode(); return false;"
+                    aria-label="Switch to Dark Mode" style="display: none;"><i class="far fa-moon"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="about non-tech-page" id="non-tech-about" style="display: none;">
+        <div class="about-title">About Me</div>
+        <div class="color-dot" style="margin-bottom: 0px;"></div>
+        <p class="about-info">I am a creative strategist and design leader with a passion for building cohesive,
+            high-impact brand ecosystems. My expertise spans the entire creative spectrum from meticulous graphic design
+            and digital content production to high-level marketing strategy and large-scale event management. I
+            specialize in weaving together complex creative threads into a singular, compelling narrative that drives
+            brand growth and audience loyalty.</p>
+        <p class="about-info">Having navigated a diverse array of roles including Creative Director, Brand Strategist,
+            and Multimedia Producer, I bring a unique, 360-degree perspective to every challenge. I am dedicated to
+            pushing the boundaries of visual storytelling and strategic communication, ensuring that every project I
+            touch is not only aesthetically superior but also fundamentally aligned with core business objectives and
+            audience needs.</p>
+    </div>
+
+    <div class="what-im-doing non-tech-page" id="what-im-doing" style="display: none;">
+        <div class="about-title">What I'm Doing</div>
+        <div class="color-dot" style="margin-bottom: 0px;"></div>
+        <div class="what-list-container">
+            <div class="non-tech-tags-container">
+                <div class="what-role">Designer</div>
+                <div class="what-role">Graphic Designer</div>
+                <div class="what-role">Marketing Designer</div>
+                <div class="what-role">Creative Designer</div>
+                <div class="what-role">Visual Designer</div>
+                <div class="what-role">Print Designer</div>
+                <div class="what-role">Brand Designer</div>
+                <div class="what-role">Digital Designer</div>
+                <div class="what-role">Creative Director</div>
+                <div class="what-role">Design Director</div>
+                <div class="what-role">Multimedia Designer</div>
+                <div class="what-role">Creative Content Producer</div>
+                <div class="what-role">Digital Content Executive</div>
+                <div class="what-role">Communications Coordinator</div>
+                <div class="what-role">Brand Manager</div>
+                <div class="what-role">Marketing Campaign Manager</div>
+                <div class="what-role">Marketing Strategist</div>
+                <div class="what-role">Brand Strategist</div>
+                <div class="what-role">Social Media Manager</div>
+                <div class="what-role">Public Relations Manager</div>
+                <div class="what-role">PR Specialist</div>
+                <div class="what-role">Event Coordinator</div>
+                <div class="what-role">Event Manager</div>
+                <div class="what-role">Fundraising Coordinator</div>
+                <div class="what-role">Sponsorship Manager</div>
+                <div class="what-role">Event Fundraising Manager</div>
+                <div class="what-role">Photographer</div>
+                <div class="what-role">Videographer</div>
+                <div class="what-role">Content Designer</div>
+                <div class="what-role">Video Producer</div>
+                <div class="what-role">Music Producer</div>
+                <div class="what-role">Music Publisher</div>
+                <div class="what-role">Music Licensing Specialist</div>
+                <div class="what-role">Audio Producer</div>
+                <div class="what-role">Content Creator</div>
+                <div class="what-role">Creative Producer</div>
+                <div class="what-role">Multimedia Producer</div>
+                <div class="what-role">Visual Content Producer</div>
+                <div class="what-role">Marketing Coordinator</div>
+                <div class="what-role">Creative Coordinator</div>
+                <div class="what-role">Brand Coordinator</div>
+                <div class="what-role">Digital Marketing Specialist</div>
+                <div class="what-role">Content Marketing Manager</div>
+                <div class="what-role">Creative Services Manager</div>
+                <div class="what-role">Creative Manager</div>
+                <div class="what-role">Art Director</div>
+                <div class="what-role">Illustration Designer</div>
+                <div class="what-role">UI/UX Designer (creative side)</div>
+                <div class="what-role">Web Designer (creative/design focus)</div>
+                <div class="what-role">Campaign Designer</div>
+                <div class="what-role">Advertising Designer</div>
+                <div class="what-role">Promotional Designer</div>
+                <div class="what-role">Exhibition Designer</div>
+                <div class="what-role">Package Designer</div>
+                <div class="what-role">Editorial Designer</div>
+                <div class="what-role">Layout Designer</div>
+                <div class="what-role">Type Designer</div>
+                <div class="what-role">Logo Designer</div>
+                <div class="what-role">Poster Designer</div>
+                <div class="what-role">Banner Designer</div>
+                <div class="what-role">ID Card Designer</div>
+                <div class="what-role">Certificate Designer</div>
+                <div class="what-role">Brochure Designer</div>
+                <div class="what-role">Flyer Designer</div>
+                <div class="what-role">Catalog Designer</div>
+                <div class="what-role">Magazine Designer</div>
+                <div class="what-role">Book Designer</div>
+                <div class="what-role">Album Cover Designer</div>
+                <div class="what-role">Music Video Producer</div>
+                <div class="what-role">Documentary Producer</div>
+                <div class="what-role">Short Film Producer</div>
+                <div class="what-role">Video Editor</div>
+                <div class="what-role">Photo Editor</div>
+                <div class="what-role">Audio Engineer</div>
+                <div class="what-role">Sound Designer</div>
+                <div class="what-role">DJ (if performing music)</div>
+                <div class="what-role">Event Planner</div>
+                <div class="what-role">Corporate Event Manager</div>
+                <div class="what-role">Wedding Planner (event management)</div>
+                <div class="what-role">Conference Coordinator</div>
+                <div class="what-role">Festival Coordinator</div>
+                <div class="what-role">Community Event Manager</div>
+                <div class="what-role">Nonprofit Event Coordinator</div>
+                <div class="what-role">Lead Generation Specialist</div>
+                <div class="what-role">Sales Support Coordinator</div>
+                <div class="what-role">Marketing Assistant</div>
+                <div class="what-role">Creative Assistant</div>
+                <div class="what-role">Brand Assistant</div>
+                <div class="what-role">Social Media Coordinator</div>
+                <div class="what-role">Content Coordinator</div>
+                <div class="what-role">PR Coordinator</div>
+                <div class="what-role">Communications Manager</div>
+                <div class="what-role">Media Producer</div>
+                <div class="what-role">Multimedia Artist</div>
+                <div class="what-role">Freelance Creative</div>
+                <div class="what-role">Independent Creative Professional</div>
+                <div class="what-role">Consultant - Creative Strategy</div>
+                <div class="what-role">Consultant - Brand Strategy</div>
+                <div class="what-role">Consultant - Marketing Strategy</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="my-works non-tech-page" id="my-works" style="display: none;">
+        <div class="about-title">My Works</div>
+        <div class="color-dot" style="margin-bottom: 0px;"></div>
+        <div class="my-works-container">
+
+            
+
+            <div class="my-work-card">
+                <div class="my-work-image-wrapper">
+                    <img src="./images-non-tech/works/Bedramak Main Logo.png" alt="Bedramake Network" class="my-work-image">
+                </div>
+                <div class="my-work-name">Bedramake Network</div>
+            </div>
+            
+            div class="my-work-card">
+                <div class="my-work-image-wrapper">
+                    <img src="https://usiculturalclub.vercel.app/banner.png" alt="Bedramake Network" class="my-work-image">
+                </div>
+                <div class="my-work-name">Banner</div>
+            </div>
+            
+        </div>
+    </div>
+
     <div class="slider-section">
         <div class="container">
             <div class="div1">d<br>d<br>c</div>
@@ -595,8 +851,39 @@
         </div>
     </div>
     <div class="last-section">
-        <div class="last-section-info">Last Updated December, 2025</div>
+        <div class="last-section-info">Last Updated January, 2026</div>
     </div>
+
+    <script>
+        function toggleMode(mode) {
+            const techBtn = document.getElementById('tech-btn');
+            const nonTechBtn = document.getElementById('non-tech-btn');
+            const techSections = document.querySelectorAll('.main:not(.non-tech-page), .about:not(.non-tech-page), .projects, .resume, .ach, .exp, .bottom-nav');
+            const nonTechSections = document.querySelectorAll('.non-tech-page');
+            const lastSection = document.querySelector('.last-section');
+
+            if (mode === 'non-tech') {
+                techSections.forEach(el => el.style.display = 'none');
+                nonTechSections.forEach(el => el.style.display = 'flex');
+                if (lastSection) lastSection.style.display = 'none';
+                techBtn.classList.remove('active');
+                nonTechBtn.classList.add('active');
+                // Scroll to top when switching
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            } else {
+                techSections.forEach(el => {
+                    // Restore flex for standard containers, block for nav
+                    if (el.classList.contains('bottom-nav')) el.style.display = 'flex';
+                    else el.style.display = 'flex';
+                });
+                nonTechSections.forEach(el => el.style.display = 'none');
+                if (lastSection) lastSection.style.display = 'flex';
+                techBtn.classList.add('active');
+                nonTechBtn.classList.remove('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    </script>
 </body>
 
 </html>
