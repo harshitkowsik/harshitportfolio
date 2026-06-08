@@ -38,6 +38,12 @@
         <div class="custom-btn" onclick="showContacts()">
             <div class="custom-btn-inner">View Contacts</div>
         </div>
+        <div class="custom-btn-theme">
+            <div class="custom-btn-inner-theme">
+                <div class="light-mode-btn" onclick="setLightMode()" aria-label="Switch to Light Mode"><i id="i-theme" class="far fa-sun"></i></div>
+                <div class="dark-mode-btn" onclick="setDarkMode()" aria-label="Switch to Dark Mode" style="display: none;"><i id="i-theme" class="far fa-moon"></i></div>
+            </div>
+        </div>
     </div>
 
 
@@ -117,10 +123,7 @@
                     aria-label="Instagram Profile"><i class="fab fa-instagram"></i></a>
                 <a href="https://x.com/harshitkowsik" target="_blank" class="twitter" aria-label="Twitter Profile"><i
                         class="fab fa-twitter"></i></a>
-                <a class="light-mode-btn" href="#" onclick="setLightMode(); return false;"
-                    aria-label="Switch to Light Mode"><i class="far fa-sun"></i></a>
-                <a class="dark-mode-btn" href="#" onclick="setDarkMode(); return false;"
-                    aria-label="Switch to Dark Mode" style="display: none;"><i class="far fa-moon"></i></a>
+
             </div>
 
         </div>
@@ -148,7 +151,9 @@
             <img src="./icons/icon-dev.svg" class="icon" alt="Web Development icon">
             <div>
                 <div class="about-tokens-title">Full-Stack Development</div>
-                <div class="about-tokens-info"> Passionate full-stack developer skilled in both frontend and backend technologies. Experienced in team projects and managing web platforms, with a focus on user-friendly, visually appealing designs and continuous learning.
+                <div class="about-tokens-info"> Passionate full-stack developer skilled in both frontend and backend
+                    technologies. Experienced in team projects and managing web platforms, with a focus on
+                    user-friendly, visually appealing designs and continuous learning.
 
                 </div>
             </div>
@@ -157,7 +162,9 @@
             <img src="./icons/icon-design.svg" class="icon" alt="UI Design icon">
             <div>
                 <div class="about-tokens-title">Web-App Optimization</div>
-                <div class="about-tokens-info"> Dedicated to optimizing web applications for performance and user experience. Skilled in identifying bottlenecks, implementing efficient solutions, and ensuring smooth, responsive interfaces that enhance user satisfaction.
+                <div class="about-tokens-info"> Dedicated to optimizing web applications for performance and user
+                    experience. Skilled in identifying bottlenecks, implementing efficient solutions, and ensuring
+                    smooth, responsive interfaces that enhance user satisfaction.
                 </div>
             </div>
         </div>
@@ -184,6 +191,7 @@
             });
             document.querySelectorAll('.light-mode-btn').forEach(btn => btn.style.display = 'none');
             document.querySelectorAll('.dark-mode-btn').forEach(btn => btn.style.display = 'inline');
+            document.querySelectorAll('.custom-btn-inner-theme').forEach(el => el.style.marginRight = '-19px');
         }
 
         function setDarkMode() {
@@ -193,6 +201,7 @@
             });
             document.querySelectorAll('.light-mode-btn').forEach(btn => btn.style.display = 'inline');
             document.querySelectorAll('.dark-mode-btn').forEach(btn => btn.style.display = 'none');
+            document.querySelectorAll('.custom-btn-inner-theme').forEach(el => el.style.marginRight = '19px');
         }
     </script>
 
@@ -817,17 +826,18 @@
         <div class="color-dot" style="margin-bottom: 0px;"></div>
         <div class="my-works-container">
 
-            
- 
+
+
             <div class="my-work-card">
                 <div class="my-work-image-wrapper">
-                    <img src="./images-non-tech/works/Bedramak Main Logo.png" alt="Bedramake Network" class="my-work-image">
+                    <img src="./images-non-tech/works/Bedramak Main Logo.png" alt="Bedramake Network"
+                        class="my-work-image">
                 </div>
                 <div class="my-work-name">Bedramake Network</div>
             </div>
-            
-            
-            
+
+
+
         </div>
     </div>
 

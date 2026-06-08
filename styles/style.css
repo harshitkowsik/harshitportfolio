@@ -236,7 +236,19 @@ i{
     transition: all ease 0.2s;
 }
 
-i:hover{
+#i-theme{
+    padding: 0px; 
+    color: #d6d6d6;
+    opacity: 0.8;
+    transition: all ease 0.2s;
+}
+
+i:hover #i-theme{
+    color: white;
+    opacity: 1;
+}
+
+#i-theme:hover {
     color: white;
     opacity: 1;
 }
@@ -774,7 +786,7 @@ img {
     white-space: nowrap;
 }
 
-.custom-btn:hover .custom-btn-inner {
+.custom-btn:hover .custom-btn-inner  {
     filter: brightness(120%);
 }
 
@@ -782,6 +794,33 @@ img {
     background-color: #ffdb70;
     color: #202022;
     box-shadow: 0 0 10px rgba(255, 219, 112, 0.2);
+}
+
+.custom-btn-theme {
+    background: linear-gradient(150deg, hsl(45, 100%, 71%) 0%, hsla(45, 100%, 20%) 50%);
+    padding: 1px;
+    border-radius: 1000px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 50px;  
+}
+
+.custom-btn-inner-theme {
+    background-color: #202022;
+    border-radius: 1000px;
+    padding: 4px 8px;
+    color: #ffdb70; 
+    font-size: 11px;
+    height: 23px;
+    width: 15px;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    margin-right: 19px;  
 }
 
 /* --- Non-Tech Page Specific Styles --- */
