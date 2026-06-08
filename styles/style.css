@@ -779,7 +779,8 @@ img {
 }
 
 .custom-btn.active .custom-btn-inner {
-   
+    background-color: #ffdb70;
+    color: #202022;
     box-shadow: 0 0 10px rgba(255, 219, 112, 0.2);
 }
 
