@@ -968,20 +968,28 @@ img {
 
 .related-links-container {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 20px;
     width: 100%;
 }
 
 .related-link-card {
+    background-color: #1e1e1f;
+    border: 1px solid #2b2b2cbf;
+    border-radius: 12px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    justify-content: center;
+    gap: 6px;
+    aspect-ratio: 1 / 1;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .related-link-image-wrapper {
-    width: 100%;
+    width: 40px;
     aspect-ratio: 1/1;
     display: flex;
     justify-content: center;
@@ -1005,16 +1013,39 @@ img {
 
 .related-link-role {
     color: #d6d6d6;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 500;
     text-align: center;
+    margin-bottom: 2px;
     width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .related-link-url {
     color: #ffdb70;
-    font-size: 12px;
-    text-decoration: underline;
+    font-size: 10px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    background: #2b2b2cbf;
+    transition: all 0.2s ease;
+}
+
+.related-link-url:hover {
+    background-color: #ffdb70;
+    color: #1e1e1f;
+}
+
+.related-link-url i {
+    font-size: 10px;
+    padding: 0;
+    color: inherit;
+    opacity: 1;
 }
 
 @media only screen and (max-width: 650px) {
