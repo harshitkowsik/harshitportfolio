@@ -804,7 +804,6 @@ img {
     display: flex;
     justify-content: center;
     align-items: center; 
-    width: 50px;  
 }
 
 .custom-btn-inner-theme {
@@ -819,12 +818,12 @@ img {
     justify-content: center;
     align-items: center;
     transition: all 0.2s ease;
-    white-space: nowrap;
-    margin-right: 19px;  
+    white-space: nowrap; 
 }
 
 /* --- Non-Tech Page Specific Styles --- */
 .non-tech-page {
+
 }
 
 .non-tech-tags-container {
