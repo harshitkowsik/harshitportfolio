@@ -260,12 +260,12 @@ i{
 }
 
 i:hover #i-theme{
-    brightness : 120% ;
+   filter: brightness(120%);
     opacity: 1;
 }
 
 #i-theme:hover {
-    brightness : 120% ;
+   filter: brightness(120%);
     opacity: 1;
 }
 
@@ -848,10 +848,6 @@ img {
     white-space: nowrap; 
 }
 
-/* --- Non-Tech Page Specific Styles --- */
-.non-tech-page {
-
-}
 
 .non-tech-tags-container {
     display: flex;

@@ -1122,14 +1122,12 @@
             if (mode === 'non-tech') {
                 techSections.forEach(el => el.style.display = 'none');
                 nonTechSections.forEach(el => el.style.display = '');
-                if (lastSection) lastSection.style.display = 'none';
                 techBtn.classList.remove('active');
                 nonTechBtn.classList.add('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             } else {
                 techSections.forEach(el => el.style.display = '');
                 nonTechSections.forEach(el => el.style.display = 'none');
-                if (lastSection) lastSection.style.display = '';
                 techBtn.classList.add('active');
                 nonTechBtn.classList.remove('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
