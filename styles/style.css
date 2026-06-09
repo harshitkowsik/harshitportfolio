@@ -96,8 +96,12 @@ a:active {
 h2 {
     color: white;
     margin: 0px;
-    font-size: 24px;
+    font-size: 24px;     
     font-weight: 400;
+}
+
+.name{
+    font-size: 22px;
 }
 
 .title {
@@ -127,7 +131,7 @@ h2 {
     height: 6px;
     border-radius: 1000px;
     margin-bottom: 16px;
-    width: 70%;
+    width: 60%;
 }
 
 .color-dot {
@@ -813,9 +817,6 @@ img {
     filter: brightness(120%);
 }
 
-.custom-btn.active {
-    background: #ffdb70;
-}
 
 .custom-btn.active .custom-btn-inner {
     background-color: #ffdb70;
